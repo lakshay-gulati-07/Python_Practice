@@ -1,8 +1,7 @@
-import random
-random_number = random.randrange(1,100)
-print(random_number)
+from random import randint
+
 logo = """
-  ____                       _____ _                                
+ ____                       _____ _                                
  / ___|_   _  ___  ___ ___  |_   _| |__   ___                       
 | |  _| | | |/ _ \/ __/ __|   | | | '_ \ / _ \                      
 | |_| | |_| |  __/\__ \__ \   | | | | | |  __/                      
@@ -14,41 +13,57 @@ logo = """
 | |\  | |_| | | | | | | |_) |  __/ |    | |_| | (_| | | | | | |  __/
 |_| \_|\__,_|_| |_| |_|_.__/ \___|_|     \____|\__,_|_| |_| |_|\___|
 
-
 """
 
-print(logo)
 
-game_mode =input("Welcome to Number Guessing Game\nChoose between 'hard' and 'easy' mode ")
-if game_mode == "hard":
-  life = 5
-  print(f"Life for Hard mode is {life}")
-elif game_mode =="easy":
-  life = 10
-  print(f"life for Easy Mode is {life}")
-else:
-  print("Wrong option is choosen")
-  life = 0
-  
-while life > 0:
-  user_guess = int(input("Guess a Number 1-100 "))
-  
-  if life == 0:
-    print("You Loose, No life Remaining")
-  
-  elif user_guess == random_number:
-    print("Congratulations !! You've Guessed the Number")
-    life = 0
-  
-  elif user_guess > random_number:
-    life -= 1
-    print(f"Too High, Guess Again, lifes Remaining {life}")
-    
-  elif user_guess < random_number:
-    life -= 1
-    print(f"Too Low, Guess Again, lifes remaining {life}")
+EASY_LEVEL_TURNS = 10
+HARD_LEVEL_TURNS = 5
 
-  
-  
-  
+#Function to check user's guess against actual answer.
+def check_answer(guess, answer, turns):
+  """checks answer against guess. Returns the number of turns remaining."""
+  if guess > answer:
+    print("Too high.")
+    return turns - 1
+  elif guess < answer:
+    print("Too low.")
+    return turns - 1
+  else:
+    print(f"You got it! The answer was {answer}.")
 
+#Make function to set difficulty.
+def set_difficulty():
+  level = input("Choose a difficulty. Type 'easy' or 'hard': ")
+  if level == "easy":
+    return EASY_LEVEL_TURNS
+  else:
+    return HARD_LEVEL_TURNS
+
+def game():
+
+  #Choosing a random number between 1 and 100.
+  print(logo)
+  print("Welcome to the Number Guessing Game!")
+  print("I'm thinking of a number between 1 and 100.")
+  answer = randint(1, 100)
+  # print(f"Pssst, the correct answer is {answer}") 
+
+  turns = set_difficulty()
+  #Repeat the guessing functionality if they get it wrong. 
+  guess = 0
+  while guess != answer:
+    print(f"You have {turns} attempts remaining to guess the number.")
+
+    #Let the user guess a number.
+    guess = int(input("Make a guess: "))
+
+    #Track the number of turns and reduce by 1 if they get it wrong.
+    turns = check_answer(guess, answer, turns)
+    if turns == 0:
+      print("You've run out of guesses, you lose.")
+      return
+    elif guess != answer:
+      print("Guess again.")
+
+
+game()
