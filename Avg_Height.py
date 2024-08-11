@@ -1,11 +1,12 @@
-student_heights = input("input a list of height of student ").split()
-print(student_heights)
-lenght = 0
-height_sum = 0
-for student in student_heights:
-  lenght +=1
-  height_sum += int(student)
-print(lenght)
-print(height_sum)
-avg = round(height_sum/lenght)
-print(f"Average Height is {avg}")
+
+
+question_bank = []
+for question in question_data:
+  question_text = question["text"]
+  question_answer = question["answer"]
+  new_question = Question(question_text,question_answer)
+  question_bank.append(new_question)
+
+quiz = QuizBrain(question_bank)
+while quiz.still_has_question:
+  quiz.next_question()
