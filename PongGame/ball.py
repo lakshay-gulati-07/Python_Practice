@@ -1,4 +1,4 @@
-from turtle import Turtle
+from turtle import Turtle,Screen
 
 class Ball(Turtle):
     def __init__(self):
