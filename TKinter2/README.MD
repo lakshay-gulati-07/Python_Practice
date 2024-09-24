@@ -8,6 +8,10 @@ TKinter Module is standard library Used to Develop GUI(Graphical User Interface)
 
 <img width="885" alt="Screenshot 2024-09-21 at 9 24 35 PM" src="https://github.com/user-attachments/assets/33925fc9-f33b-4127-bc0d-0c6d81e0d0ab">
 
+<img width="887" alt="Screenshot 2024-09-21 at 9 22 52 PM" src="https://github.com/user-attachments/assets/93bd93b2-ac44-4101-bfbf-14c0c96ee1a4">
+
+
+
 
 
 
