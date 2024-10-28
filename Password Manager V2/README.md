@@ -1,7 +1,8 @@
 # Password Manager V2
 added more functionality of storing and retrieving of passwords locally using JSON.
 <hr>
-### Screenshots
+
+## Screenshots
 
 <img width="827" alt="Screenshot 2024-10-28 at 10 23 43 PM" src="https://github.com/user-attachments/assets/3715b571-c3be-45e1-ad4f-5f2926dbbbcb">
 <hr>
