@@ -4,8 +4,8 @@
 # # new Email id for Testing Purpose
 # yahoo = "testingpythonsmtplib7@yahoo.com"
 # gmail = "testingpythonsmtplib@gmail.com"
-# g_password = "Lakshay@2001"
-# y_password = "TeL6gBEG9Q.atj6"
+# g_password = ""
+# y_password = ""
 
 # # creating object
 # connection = smtplib.SMTP("smtp.mail.yahoo.com")
